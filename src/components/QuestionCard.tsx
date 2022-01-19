@@ -7,6 +7,7 @@ import {Wrapper, ButtonWrapper} from './QuestionCard.style';
 type Props={
     question:string;
     answers:string[];
+    //callback監聽滑鼠事件
     callback:(e:React.MouseEvent<HTMLButtonElement>) => void;
     userAnswer:AnswerObject|undefined;
     questionNr:number;

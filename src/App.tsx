@@ -24,9 +24,7 @@ const App=()=> {
   const [score,setScore]=useState(0);
   const [gameOver,setGameOver]=useState(true);
   
-  console.log(fetchQuizQuestions(TOTAL_QUESTIONS,Difficulty.EASY));
-  
-
+  //題目、載入完成初始設置
   const startTrivia=async()=>{
     setLoading(true);
     setGameOver(false);
@@ -93,6 +91,7 @@ const App=()=> {
         userAnswer={userAnswers ? userAnswers[number] : undefined}
         callback={checkAnswer}
       /> )}
+      {/* 下一題判定 1.沒輸掉 2.載入完成 3.題目數量內 */}
       {!gameOver && !loading && userAnswers.length ===number+1 && number !==TOTAL_QUESTIONS-1?(
           <button className="next" onClick={nextQuestion}>
             Next Question
